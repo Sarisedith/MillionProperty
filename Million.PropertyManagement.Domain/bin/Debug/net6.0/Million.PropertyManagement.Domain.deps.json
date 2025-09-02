@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Million.PropertyManagement.Domain/1.0.0": {
+        "runtime": {
+          "Million.PropertyManagement.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Million.PropertyManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

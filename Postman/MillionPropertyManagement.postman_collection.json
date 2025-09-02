@@ -1,0 +1,1151 @@
+{
+	"info": {
+		"_postman_id": "6d30f631-4824-49d5-b3a1-fc2c8ee4e04e",
+		"name": "MillionPropertyManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19770277"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"access_token\", jsonData.access_token);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"AdminMillion\",\r\n  \"password\": \"AdminMillion123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/Auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7285/api/Auth/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"username\": \"Admin\",\r\n  \"password\": \"Admin123!\"\r\n}'"
+			},
+			"response": [
+				{
+					"name": "Auth",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"AdminMillion\",\r\n  \"password\": \"AdminMillion123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/Auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Auth",
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImp0aSI6ImU5ZjBkM2JiLWY3MmItNDMzMC1hNmRjLTM2Y2NmYzEzY2ZkNCIsImV4cCI6MTc1Njc2MzU0MCwiaXNzIjoiTWlsbGlvbi5Qcm9wZXJ0eU1hbmFnZW1lbnQiLCJhdWQiOiJNaWxsaW9uQ2xpZW50cyJ9.GJ-grsX-btyk3pOJEgvuJF5Sn-QqByACn1H5l8qKOhE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateOwners",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"test3\",\r\n  \"address\": \"test3\",\r\n  \"birthday\": \"2025-09-01T17:48:33.486Z\",\r\n  \"photo\": \"test2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/Owners",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Owners"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7285/api/Owners' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImp0aSI6IjVjZDJlZThmLWFjYjctNGRkZS05NDljLTM2N2M1ZWQ1M2I3MSIsImV4cCI6MTc1Njc2MzE2NSwiaXNzIjoiTWlsbGlvbi5Qcm9wZXJ0eU1hbmFnZW1lbnQiLCJhdWQiOiJNaWxsaW9uQ2xpZW50cyJ9.iDiZ-I3T7VGqodV-oi3PbKRZtHRto9MZU9fiVhOdR_U' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"name\": \"test\",\r\n  \"address\": \"test2\",\r\n  \"birthday\": \"2025-09-01T17:48:33.486Z\",\r\n  \"photo\": \"test2\"\r\n}'"
+			},
+			"response": [
+				{
+					"name": "SaveOwners",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"test3\",\r\n  \"address\": \"test3\",\r\n  \"birthday\": \"2025-09-01T17:48:33.486Z\",\r\n  \"photo\": \"test2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/Owners",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Owners"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"test3\",\n    \"address\": \"test3\",\n    \"birthday\": \"2025-09-01T17:48:33.486Z\",\n    \"photo\": \"test2\",\n    \"properties\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateProperties",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": \"casa 2\",\r\n  \"city\": \"test\",\r\n  \"price\": 2500,\r\n  \"yearBuilt\": 1993,\r\n  \"ownerId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/Properties",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Properties"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7285/api/Properties' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiJhNGZjMzY2Yy04OTEwLTQ1YzAtODI3Yy1lNmJhZjQyZWJhYmEiLCJleHAiOjE3NTY3ODE5NzAsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.y86tnmaNyRKuT-3k8lIHdSoxBCRdpkwlOey8HlgVLFs' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"address\": \"casa 2\",\r\n  \"city\": \"test\",\r\n  \"price\": 2500,\r\n  \"yearBuilt\": 1993,\r\n  \"ownerId\": 3\r\n}'"
+			},
+			"response": [
+				{
+					"name": "CreateProperties",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"casa 2\",\r\n  \"city\": \"test\",\r\n  \"price\": 2500,\r\n  \"yearBuilt\": 1993,\r\n  \"ownerId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/Properties",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Properties"
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\r\n    \"id\": 1010,\r\n    \"address\": \"casa 2\",\r\n    \"city\": \"test\",\r\n    \"price\": 2500,\r\n    \"yearBuilt\": 1993,\r\n    \"images\": []\r\n}"
+				}
+			]
+		},
+		{
+			"name": "CreateImage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\": \"testtt\",\r\n  \"isPrimary\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/Properties/1/images",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Properties",
+						"1",
+						"images"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7285/api/Properties/1/images' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiJhNGZjMzY2Yy04OTEwLTQ1YzAtODI3Yy1lNmJhZjQyZWJhYmEiLCJleHAiOjE3NTY3ODE5NzAsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.y86tnmaNyRKuT-3k8lIHdSoxBCRdpkwlOey8HlgVLFs' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"url\": \"testtt\",\r\n  \"isPrimary\": true\r\n}'"
+			},
+			"response": [
+				{
+					"name": "CrearImagen",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"url\": \"testtt\",\r\n  \"isPrimary\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/Properties/1/images",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Properties",
+								"1",
+								"images"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "CreatePropertyTraces",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"propertyId\": 1,\r\n  \"dateSale\": \"2025-09-02T03:51:38.552Z\",\r\n  \"name\": \"test\",\r\n  \"value\": 22220,\r\n  \"tax\": 220\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/PropertyTraces",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"PropertyTraces"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://localhost:7285/api/PropertyTraces' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiI1YTllZTIzNi0zNzViLTRiNWItYjlkNC03YWU0MmI3MzU1NDUiLCJleHAiOjE3NTY3OTkyOTIsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.mTM3PjzP-lA9AjNwlrnwgOI0tfMuutEKDw63LWzaNzk' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"propertyId\": 1,\r\n  \"dateSale\": \"2025-09-02T03:51:38.552Z\",\r\n  \"name\": \"test\",\r\n  \"value\": 22220,\r\n  \"tax\": 220\r\n}'"
+			},
+			"response": [
+				{
+					"name": "CreatePropertyTraces",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"propertyId\": 1,\r\n  \"dateSale\": \"2025-09-02T03:51:38.552Z\",\r\n  \"name\": \"test\",\r\n  \"value\": 22220,\r\n  \"tax\": 220\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/PropertyTraces",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"PropertyTraces"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"id\": 11,\n    \"propertyId\": 1,\n    \"dateSale\": \"2025-09-02T03:51:38.552Z\",\n    \"name\": \"test\",\n    \"value\": 22220,\n    \"tax\": 220\n}"
+				}
+			]
+		},
+		{
+			"name": "GetOwnerById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7285/api/Owners/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Owners",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7285/api/Owners/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImp0aSI6IjVjZDJlZThmLWFjYjctNGRkZS05NDljLTM2N2M1ZWQ1M2I3MSIsImV4cCI6MTc1Njc2MzE2NSwiaXNzIjoiTWlsbGlvbi5Qcm9wZXJ0eU1hbmFnZW1lbnQiLCJhdWQiOiJNaWxsaW9uQ2xpZW50cyJ9.iDiZ-I3T7VGqodV-oi3PbKRZtHRto9MZU9fiVhOdR_U'"
+			},
+			"response": [
+				{
+					"name": "GetOwnerById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7285/api/Owners/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Owners",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"John Doe\",\n    \"address\": \"123 Main St\",\n    \"birthday\": null,\n    \"photo\": null,\n    \"properties\": [\n        {\n            \"id\": 1,\n            \"address\": \"123 Ocean Drive\",\n            \"city\": \"Miami\",\n            \"price\": 500000,\n            \"yearBuilt\": 2010,\n            \"isDeleted\": false,\n            \"createdAt\": \"2025-08-31T04:39:12.180675\",\n            \"updatedAt\": null,\n            \"ownerId\": 1,\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"propertyId\": 1,\n                    \"url\": \"https://example.com/img1.jpg\",\n                    \"isPrimary\": true\n                }\n            ],\n            \"traces\": [\n                {\n                    \"id\": 1,\n                    \"propertyId\": 1,\n                    \"dateSale\": \"2025-08-31T04:39:12.1833333\",\n                    \"name\": \"Initial\",\n                    \"value\": 500000,\n                    \"tax\": 0\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"address\": \"1 test\",\n            \"city\": \"test\",\n            \"price\": 20,\n            \"yearBuilt\": 2020,\n            \"isDeleted\": false,\n            \"createdAt\": \"2025-08-31T05:43:56.374543\",\n            \"updatedAt\": null,\n            \"ownerId\": 1,\n            \"images\": [],\n            \"traces\": []\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GetOwnerOpcionalName",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7285/api/Owners?name=john",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Owners"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "john"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7285/api/Owners' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImp0aSI6IjVjZDJlZThmLWFjYjctNGRkZS05NDljLTM2N2M1ZWQ1M2I3MSIsImV4cCI6MTc1Njc2MzE2NSwiaXNzIjoiTWlsbGlvbi5Qcm9wZXJ0eU1hbmFnZW1lbnQiLCJhdWQiOiJNaWxsaW9uQ2xpZW50cyJ9.iDiZ-I3T7VGqodV-oi3PbKRZtHRto9MZU9fiVhOdR_U'"
+			},
+			"response": [
+				{
+					"name": "GetOwnerOpcionalName",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImp0aSI6IjVjZDJlZThmLWFjYjctNGRkZS05NDljLTM2N2M1ZWQ1M2I3MSIsImV4cCI6MTc1Njc2MzE2NSwiaXNzIjoiTWlsbGlvbi5Qcm9wZXJ0eU1hbmFnZW1lbnQiLCJhdWQiOiJNaWxsaW9uQ2xpZW50cyJ9.iDiZ-I3T7VGqodV-oi3PbKRZtHRto9MZU9fiVhOdR_U"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7285/api/Owners?name=john",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Owners"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "john"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"address\": \"123 Main St\",\n        \"birthday\": null,\n        \"photo\": null,\n        \"properties\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetPropertiesById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7285/api/Properties/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Properties",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7285/api/Properties/1' \\\r\n  -H 'accept: */*'"
+			},
+			"response": [
+				{
+					"name": "GetPropertiesById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7285/api/Properties/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Properties",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\r\n    \"id\": 1,\r\n    \"address\": \"1223st\",\r\n    \"city\": \"New york\",\r\n    \"price\": 23330.00,\r\n    \"yearBuilt\": 2005,\r\n    \"images\": [\r\n        {\r\n            \"id\": 1,\r\n            \"url\": \"https://example.com/img1.jpg\",\r\n            \"isPrimary\": true\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "GetPropertiesWithFilters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7285/api/Properties?City=test&MinPrice=2&MaxPrice=23&Page=1&PageSize=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Properties"
+					],
+					"query": [
+						{
+							"key": "City",
+							"value": "test"
+						},
+						{
+							"key": "MinPrice",
+							"value": "2"
+						},
+						{
+							"key": "MaxPrice",
+							"value": "23"
+						},
+						{
+							"key": "Page",
+							"value": "1"
+						},
+						{
+							"key": "PageSize",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7285/api/Properties?City=test&MinPrice=2&MaxPrice=23&Page=1&PageSize=3' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiJhNGZjMzY2Yy04OTEwLTQ1YzAtODI3Yy1lNmJhZjQyZWJhYmEiLCJleHAiOjE3NTY3ODE5NzAsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.y86tnmaNyRKuT-3k8lIHdSoxBCRdpkwlOey8HlgVLFs'"
+			},
+			"response": [
+				{
+					"name": "GetPropertiesWithFilters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiJhNGZjMzY2Yy04OTEwLTQ1YzAtODI3Yy1lNmJhZjQyZWJhYmEiLCJleHAiOjE3NTY3ODE5NzAsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.y86tnmaNyRKuT-3k8lIHdSoxBCRdpkwlOey8HlgVLFs"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7285/api/Properties?City=test&MinPrice=2&MaxPrice=23&Page=1&PageSize=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Properties"
+							],
+							"query": [
+								{
+									"key": "City",
+									"value": "test"
+								},
+								{
+									"key": "MinPrice",
+									"value": "2"
+								},
+								{
+									"key": "MaxPrice",
+									"value": "23"
+								},
+								{
+									"key": "Page",
+									"value": "1"
+								},
+								{
+									"key": "PageSize",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\r\n    {\r\n        \"id\": 3,\r\n        \"address\": \"1 test\",\r\n        \"city\": \"test\",\r\n        \"price\": 20.00,\r\n        \"yearBuilt\": 2020,\r\n        \"images\": [\r\n            {\r\n                \"id\": 3,\r\n                \"url\": \"test\",\r\n                \"isPrimary\": true\r\n            }\r\n        ]\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "GetPropertyTraces",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7285/api/PropertyTraces/by-property/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"PropertyTraces",
+						"by-property",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://localhost:7285/api/PropertyTraces/by-property/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiI1YTllZTIzNi0zNzViLTRiNWItYjlkNC03YWU0MmI3MzU1NDUiLCJleHAiOjE3NTY3OTkyOTIsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.mTM3PjzP-lA9AjNwlrnwgOI0tfMuutEKDw63LWzaNzk'"
+			},
+			"response": [
+				{
+					"name": "GetPropertyTraces",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7285/api/PropertyTraces/by-property/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"PropertyTraces",
+								"by-property",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\n    {\n        \"id\": 1,\n        \"propertyId\": 1,\n        \"dateSale\": \"2025-08-31T04:39:12.1833333\",\n        \"name\": \"Initial\",\n        \"value\": 500000,\n        \"tax\": 0\n    },\n    {\n        \"id\": 10,\n        \"propertyId\": 1,\n        \"dateSale\": \"2025-09-02T03:51:38.552\",\n        \"name\": \"test\",\n        \"value\": 22220,\n        \"tax\": 220\n    },\n    {\n        \"id\": 11,\n        \"propertyId\": 1,\n        \"dateSale\": \"2025-09-02T03:51:38.552\",\n        \"name\": \"test\",\n        \"value\": 22220,\n        \"tax\": 220\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateProperties",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": \"testttt\",\r\n  \"city\": \"testttt\",\r\n  \"price\": 20,\r\n  \"yearBuilt\": 1900\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/Properties/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Properties",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'https://localhost:7285/api/Properties/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiJhNGZjMzY2Yy04OTEwLTQ1YzAtODI3Yy1lNmJhZjQyZWJhYmEiLCJleHAiOjE3NTY3ODE5NzAsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.y86tnmaNyRKuT-3k8lIHdSoxBCRdpkwlOey8HlgVLFs' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"address\": \"testttt\",\r\n  \"city\": \"testttt\",\r\n  \"price\": 20,\r\n  \"yearBuilt\": 1900\r\n}'"
+			},
+			"response": [
+				{
+					"name": "UpdateProperties",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"testttt\",\r\n  \"city\": \"testttt\",\r\n  \"price\": 20,\r\n  \"yearBuilt\": 1900\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/Properties/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Properties",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Updateprice",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"newPrice\": 2800\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/api/Properties/3/price",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"api",
+						"Properties",
+						"3",
+						"price"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'https://localhost:7285/api/Properties/3/price' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW5NaWxsaW9uIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJqdGkiOiJhNGZjMzY2Yy04OTEwLTQ1YzAtODI3Yy1lNmJhZjQyZWJhYmEiLCJleHAiOjE3NTY3ODE5NzAsImlzcyI6Ik1pbGxpb24uUHJvcGVydHlNYW5hZ2VtZW50IiwiYXVkIjoiTWlsbGlvbkNsaWVudHMifQ.y86tnmaNyRKuT-3k8lIHdSoxBCRdpkwlOey8HlgVLFs' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"newPrice\": 2800\r\n}'"
+			},
+			"response": [
+				{
+					"name": "Updateprice",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newPrice\": 2800\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7285/api/Properties/3/price",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7285",
+							"path": [
+								"api",
+								"Properties",
+								"3",
+								"price"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"id\": 9,\n    \"propertyId\": 3,\n    \"dateSale\": \"2025-09-02T01:49:55.4688504Z\",\n    \"name\": \"Price change\",\n    \"value\": 2800,\n    \"tax\": 0\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": ""
+		}
+	]
+}
