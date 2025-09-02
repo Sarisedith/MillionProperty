@@ -30,5 +30,5 @@ Incluye controladores, Entity Framework Core, FluentValidation, AutoMapper, Seri
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/Sarisedith/MillionPropertyManagement.git
+   git clone https://github.com/Sarisedith/MillionProperty.git
    cd Million.PropertyManagement
